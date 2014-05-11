@@ -3,3 +3,5 @@
 /public/.sass-cache
 
 /public/stylesheets/*.css
+
+npm-debug.log

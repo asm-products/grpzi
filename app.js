@@ -2,12 +2,13 @@ var express = require('express'),
     path = require('path'),
     favicon = require('static-favicon'),
     logger = require('morgan'),
-    bodyParser = require('body-parser');
+    bodyParser = require('body-parser'),
+    db = require('mongoose');
 
 var app = express();
 
 // config setup
-require('./config')(app);
+require('./config')(app, db);
 
 // middleware setup
 app.use(bodyParser());

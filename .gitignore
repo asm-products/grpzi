@@ -3,5 +3,6 @@
 /public/.sass-cache
 
 /public/stylesheets/*.css
+!/public/stylesheets/*.min.css
 
 npm-debug.log

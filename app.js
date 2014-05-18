@@ -21,9 +21,6 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 app.use(require('express-ejs-layouts'));
 
-// compass setup
-app.use(require('node-compass')({mode: 'expanded'}));
-
 // asset setup
 app.use(express.static(path.join(__dirname, 'public')));
 

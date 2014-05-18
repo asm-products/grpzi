@@ -1,7 +1,15 @@
 #!/usr/bin/env node
-var debug = require('debug')('grpzi');
-var app = require('../app');
+var debug = require('debug')('grpzi'),
+    confy = require('confyio');
 
-var server = app.listen(app.get('port'), function() {
-  debug('Running on ' + app.get('baseurl'));
+// try and load production config from Confy
+confy.config.env(process.env.CONFY_URL || '', function (err) {
+  if (err)
+    console.log('Unable to load config from Confy, using local configuration', err);
+
+  var app = require('../app');
+
+  var server = app.listen(app.get('port'), function() {
+    debug('Running on ' + app.get('baseurl'));
+  });
 });

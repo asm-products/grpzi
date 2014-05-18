@@ -1,5 +1,5 @@
 module.exports = function (app, db) {
-  app.set ('db', process.env.DB_URL || 'mongodb://localhost/grpzi');
+  app.set ('db', process.env.MONGOHQ_URL || process.env.DB_URL || 'mongodb://localhost/grpzi');
 
   db.connect(app.get('db'));
 

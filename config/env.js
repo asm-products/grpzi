@@ -6,7 +6,4 @@ module.exports = function(app) {
 
   // base url
   app.set('baseurl', process.env.BASE_URL || 'http://localhost:' + app.get('port'));
-
-  // default layout
-  app.set('layout', 'layouts/layout');
 };

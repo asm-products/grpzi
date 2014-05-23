@@ -12,10 +12,22 @@ module.exports = function (app) {
     return res.json({message: 'Not found'});
   }
 
-  // output errors in request parameters
-  app.errors.params = function (res, errors) {
+  // output validation errors
+  app.errors.validation = function (res, errors) {
     res.status(422);
-    return res.json({message: 'Invalid parameters', errors: errors});
+
+    var output = [];
+
+    for (var key in errors) {
+      if (errors[key].path) {
+        output.push({field: errors[key].path, message: errors[key].message});
+      } else
+      {
+        output.push(errors[key]);
+      }
+    }
+
+    return res.json({message: 'validation_failed', errors: output});
   }
 
   // server errors

@@ -12,6 +12,8 @@
     "body-parser": "~1.0.0",
     "debug": "~0.7.4",
     "mongoose": "3.8.9",
-    "confyio": "1.3.x"
+    "confyio": "1.3.x",
+    "validator": "^3.12.0",
+    "bcrypt": "^0.7.8"
   }
 }

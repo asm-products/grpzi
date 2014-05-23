@@ -8,6 +8,9 @@ var app = express();
 // config setup
 require('./config')(app, db);
 
+// load helpers
+require('./helpers/params')(app);
+
 // middleware setup
 app.use(bodyParser());
 
@@ -15,6 +18,7 @@ app.use(bodyParser());
 app.use(logger('dev'));
 
 // controllers setup
+require('./controllers/user')(app, db);
 
 // error helper setup
 require('./helpers/errors')(app);
